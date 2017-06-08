@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+.idea
+*.iml
+*.ipr
+*.iws
+
+npm-debug.log
+npm-debug.log*
+
+/node_modules
+
+/config/*
+!/config/template.json

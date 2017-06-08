@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>S3-Proxy</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function copyMdLink(){
+        execCopy($('.md-link').text());
+      }
+      function execCopy(text){
+        var $ta = $('<textarea>').css({position: 'fixed', left: '-100%'}).appendTo('body');
+        $ta.val(text).select();
+        document.execCommand('copy');
+        $ta.remove();
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <a href="<%= url %>"><%= url %></a>
+    </div>
+    <div style="margin-top: 2em;">
+      <input type="button" value="copy" onclick="copyMdLink()">
+      <span class="md-link">[<%= filename %>](<%= url %>)</span>
+    </div>
+    <div style="margin-top: 2em;">
+      <a href="./">TOP</a>
+    </div>
+  </body>
+</html>
